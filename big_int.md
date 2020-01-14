@@ -1,8 +1,8 @@
-#问题
+# 问题
 
 大整数相乘
 
-#思路说明
+## 思路说明
 
 对于大整数计算，一般都要用某种方法转化，否则会溢出。但是python无此担忧了。
 
@@ -24,8 +24,8 @@ Python支持**“无限精度”的整数，**一般情况下不用考虑整数�
 
 两个整数相乘：**阿拉伯乘法**。关于这个乘法的详细描述，请看：[http://ualr.edu/lasmoller/medievalmult.html](http://ualr.edu/lasmoller/medievalmult.html)
 
-#解决（Python）
-
+## 解决（Python）
+```python
 	#!/usr/bin/env python
 	#coding:utf-8
 	
@@ -73,7 +73,6 @@ Python支持**“无限精度”的整数，**一般情况下不用考虑整数�
 	
 	
 	#计算阿拉伯乘法表格左侧开始的各项之和
-	
 	def summ_left(lst):
 	    summ = []
 	    x = [i for i in range(len(lst))]
@@ -91,7 +90,6 @@ Python支持**“无限精度”的整数，**一般情况下不用考虑整数�
 	            i = i-1
 	        summ.append(s)
 	    return summ
-	
 	
 	
 	#计算阿拉伯乘法表格底部开始的各项之和
@@ -135,9 +133,9 @@ Python支持**“无限精度”的整数，**一般情况下不用考虑整数�
 	
 	if __name__=="__main__":
 	    arabic_multiplication(469,37)
+```
+## 联系方法
 
-#联系方法
 - qiwsir#gmail.com
-- https://qiwsir.github.io
-- http://weibo.com/qiwsir
-
+- <https://qiwsir.github.io>
+- <http://weibo.com/qiwsir>

@@ -8,8 +8,6 @@ def divide(numerator, denominator, detect_repetition=True, digit_limit=None):
     if not detect_repetition and digit_limit == None:
         return None
 
-    decimal_found = False
-                                
     v = numerator // denominator
     numerator = 10 * (numerator - v * denominator)
     answer = str(v)
@@ -50,12 +48,12 @@ def divide(numerator, denominator, detect_repetition=True, digit_limit=None):
     return answer
 
 if __name__=="__main__":
-    print "5divide2",
-    print divide(5,2)
-    print "10divide3",
-    print divide(10,3)
-    print divide(10,3,5)
-    print "15divide7"
-    print divide(15,7)
-    print divide(15,7,True,3)
+    print("5divide2")
+    print(divide(5,2))
+    print("10divide3")
+    print(divide(10,3))
+    print(divide(10,3,5))
+    print("15divide7")
+    print(divide(15,7))
+    print(divide(15,7,True,3))
     

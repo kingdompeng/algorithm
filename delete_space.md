@@ -2,7 +2,7 @@
 
 删除一个字符串中连续超过一次的空格。
 
-#解决（Python）
+##解决（Python）
 
     #! /usr/bin/env python
     #coding:utf-8
@@ -16,5 +16,5 @@
     if __name__=="__main__":
         one_str = "Hello,  I am  Qiwsir."
         string = del_space(one_str)
-        print one_str
-        print string
+        print(one_str)
+        print(string)

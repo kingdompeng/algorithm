@@ -39,6 +39,13 @@ def fib3(n):
         a, b = b, a+b
     return a
 
+def fib4(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield a, b
+        a, b = b, a + b
+        n += 1
+
 #除了上述方法之外，还可以直接用数学运算的结果
 #推荐参考：http://zh.wikipedia.org/wiki/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97中的结论
 
@@ -71,4 +78,6 @@ Enter Series length to print fibonacci sequence10
 """
 if __name__=="__main__":
     
-    Fibonacci_Series() 
+    # Fibonacci_Series()
+    for i in fib4(10):
+        print(i)

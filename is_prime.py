@@ -42,7 +42,7 @@ def isPrime3(n):
         if i * i > n:
             return True
         if n % i == 0:
-            return Fals
+            return False
 
 #方法四
 
@@ -62,5 +62,4 @@ def isPrime4(n):
 
 
 if __name__=="__main__":
-    a=isPrime4(5)
-    print a
+    print(isPrime4(113))

@@ -17,7 +17,7 @@
 	    return a
 	
 	if __name__ =="__main__":
-	    print ahead_one()
+	    print(ahead_one())
 
 #解决(racket 5.2.1)
 

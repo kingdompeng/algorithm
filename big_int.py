@@ -26,11 +26,11 @@ def arabic_multiplication(num1,num2):
     int_martix = [[i*j for i in num_lst1] for j in num_lst2]
     
     #将上述元素为数字的list转化为元素类型是str，主要是将9-->'09'
-    str_martix = [map(convert_to_str,int_martix[i]) for i in range(len(int_martix))]
-    
+    str_martix = [list(map(convert_to_str,int_martix[i])) for i in range(len(int_martix))]
+    print(str_martix)
     #将上述各个list中的两位数字分开：['01','29','03']-->[0,2,0],[1,9,3]
     martix = [[int(str_martix[i][j][z]) for j in range(len(str_martix[i]))] for i in range(len(str_martix)) for z in range(2)]
-    
+    print(martix)
     #计算阿拉伯乘法表的左侧开始各项和
     sum_left = summ_left(martix)
 
@@ -47,8 +47,8 @@ def arabic_multiplication(num1,num2):
     #翻转结果并合并为一个结果字符串数值
     result.reverse()
     int_result = "".join(result)
-    print "%d*%d="%(num1,num2)
-    print int_result
+    print("%d*%d="%(num1,num2))
+    print(int_result)
 
 
 #将int类型转化为str类型，9-->'09'
@@ -65,8 +65,11 @@ def convert_to_str(num):
 def summ_left(lst):
     summ = []
     x = [i for i in range(len(lst))]
+    print("x:", x)
     y = [j for j in range(len(lst[0]))]
+    print("y:", y)
     sx = [i for i in x if i%2==0]
+    print("sx:", sx)
     for i in sx:
         s=0
         j=0
@@ -115,11 +118,12 @@ def take_digit(lst):
             tmp = 0
             digit_list.append(str(lstm))
         else:
-            tmp = lstm/10
-            mm = lstm-tmp*10
+            tmp = lstm // 10
+            mm = lstm - tmp * 10
             digit_list.append(str(mm))
     return digit_list
 
 
 if __name__=="__main__":
-    arabic_multiplication(469,37)
+    # arabic_multiplication(469,37)
+    arabic_multiplication(1234, 567)

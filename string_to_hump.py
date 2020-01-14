@@ -16,6 +16,6 @@ def convert(one_string,space_character):    #one_string:输入的字符串；spa
     return hump_string
 
 if __name__=='__main__':
-    print "the string is:ab-cd-ef"
-    print "convert to hump:"
-    print convert("ab-cd-ef","-")
+    print("the string is:ab-cd-ef")
+    print("convert to hump:")
+    print(convert("ab-cd-ef","-"))

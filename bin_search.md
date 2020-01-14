@@ -1,10 +1,10 @@
-#问题
+# 问题
 
 二分查找
 
 list.index()无法应对大规模数据的查询，需要用其它方法解决，这里谈的就是二分查找
 
-#思路说明
+## 思路说明
 
 在查找方面，python中有list.index()的方法。例如：
 
@@ -13,7 +13,7 @@ list.index()无法应对大规模数据的查询，需要用其它方法解决�
     1
     >>> a.index(5)              #如果没有该值，则报错
     Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
+        File "<stdin>", line 1, in <module>
     ValueError: 5 is not in list
 
 这是python中基本的查找方法，虽然简单，但是，如果由于其时间复杂度为O(n)，对于大规模的查询恐怕是不足以胜任的。二分查找就是一种替代方法。
@@ -28,37 +28,37 @@ list.index()无法应对大规模数据的查询，需要用其它方法解决�
 
 这种搜索算法每一次比较都使搜索范围缩小一半。时间复杂度：O(logn)
 
-#解决(Python)
+## 解决(Python)
 
-	def binarySearch(lst, value,low,high):          #low,high是lst的查找范围
-	    if high < low:
-	        return -1
-	    mid = (low + high)/2
-	    if lst[mid] > value:
-	        return binarySearch(lst, value, low, mid-1)
-	    elif lst[mid] < value:
-	        return binarySearch(lst, value, mid+1, high)
-	    else:
-	        return mid
-	
-	#也可以不用递归方法，而采用循环，如下：
-	 
-	def bsearch(l, value):
-	    lo, hi = 0, len(l)-1
-	    while lo <= hi:
-	        mid = (lo + hi) / 2
-	        if l[mid] < value:
-	            lo = mid + 1
-	        elif value < l[mid]:
-	            hi = mid - 1
-	        else:
-	            return mid
-	    return -1
-	 
-	if __name__ == '__main__':
-	    l = range(50)
-	    print binarySearch(l,10,0,49)
-	    print bsearch(l,10)
+    def binarySearch(lst, value,low,high):          #low,high是lst的查找范围
+        if high < low:
+            return -1
+        mid = (low + high)/2
+        if lst[mid] > value:
+            return binarySearch(lst, value, low, mid-1)
+        elif lst[mid] < value:
+            return binarySearch(lst, value, mid+1, high)
+        else:
+            return mid
+
+    #也可以不用递归方法，而采用循环，如下：
+        
+    def bsearch(l, value):
+        lo, hi = 0, len(l)-1
+        while lo <= hi:
+            mid = (lo + hi) / 2
+            if l[mid] < value:
+                lo = mid + 1
+            elif value < l[mid]:
+                hi = mid - 1
+            else:
+                return mid
+        return -1
+        
+    if __name__ == '__main__':
+        l = range(50)
+        print binarySearch(l,10,0,49)
+        print bsearch(l,10)
 
 对于python，不能忽视其强大的标准库。经查阅，发现标准库中就有一个模块，名为：bisect。其文档中有这样一句话：
 
@@ -77,15 +77,15 @@ list.index()无法应对大规模数据的查询，需要用其它方法解决�
 - 关于bisect模块的更多内容，可以参看[官方文档](https://docs.python.org/2/library/bisect.html)
 
 下面演示这个模块的一个函数
-	
-	from bisect import *
-	
-	def bisectSearch(lst, x):          
-	    i = bisect_left(lst, x)         #bisect_left(lst,x)，得到x在已经排序的lst中的位置
-	    if i != len(lst) and lst[i] == x:
-	        return i
-	    raise ValueError
-	
-	if __name__=="__main__":
-	    lst = sorted([2,5,3,8])
-	    print bisectSearch(lst,5)
+
+    from bisect import *
+
+    def bisectSearch(lst, x):          
+        i = bisect_left(lst, x)         #bisect_left(lst,x)，得到x在已经排序的lst中的位置
+        if i != len(lst) and lst[i] == x:
+            return i
+        raise ValueError
+
+    if __name__=="__main__":
+        lst = sorted([2,5,3,8])
+        print bisectSearch(lst,5)

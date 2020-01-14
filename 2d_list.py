@@ -31,16 +31,16 @@ if __name__=="__main__":
     
     score_list = [[random.randint(0,100) for i in range(student_num)] for j in range(len(course_list))]
     for i in range(len(course_list)):
-        print "score of every one in %s:"%course_list[i]
-        print score_list[i]
+        print("score of every one in %s:"%course_list[i])
+        print(score_list[i])
 
     every_score,every_total,ave_one_course = score(score_list,course_list,student_num)
-    print "\n"
-    print "NEXT IS EVERY ONE SCORE IN EVERY COURSE:"
+    print("\n")
+    print("NEXT IS EVERY ONE SCORE IN EVERY COURSE:")
     for name in course_list:
-        print name,
-    print "\t"
-    print every_score
-    print "\n"
-    print "every one all score:\t",every_total
-    print "every course of average score:\t",ave_one_course
+        print(name,)
+    print("\t")
+    print(every_score)
+    print("\n")
+    print("every one all score:\t",every_total)
+    print("every course of average score:\t",ave_one_course)
